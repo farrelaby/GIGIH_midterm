@@ -2,13 +2,23 @@ const VideoService = require("../services/videoService");
 
 const VideoController = {
   getAllVideos: async (req, res) => {
-    const videos = await VideoService.getAllVideos();
-    res.json(videos);
+    try {
+      const videos = await VideoService.getAllVideos();
+      res.json(videos);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Error getting videos");
+    }
   },
   getVideoById: async (req, res) => {
     const videoId = req.params.id;
-    const video = await VideoService.getVideoById(videoId);
-    res.json(video);
+    try {
+      const video = await VideoService.getVideoById(videoId);
+      res.json(video);
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Error getting video details");
+    }
   },
   addVideo: async (req, res) => {
     const video = req.body;
