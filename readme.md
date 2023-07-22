@@ -64,5 +64,6 @@
 ## How To Run The Server
 1. clone the repository
 2. run `npm install`
-3. run `npm run dev`
-4. access the available endpoints through `localhost:8000/v1` with your preferred API client (Postman, Insomnia, etc)
+3. configure the `.env` file, especially for the database URL using `DB_URL` variable
+4. run `npm run dev`
+5. access the available endpoints through `localhost:8000/v1` with your preferred API client (Postman, Insomnia, etc)
